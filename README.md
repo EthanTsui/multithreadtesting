@@ -8,24 +8,24 @@ This framework simulates multithreaded envirment for you and perform conccurent 
 
 ```
 public class TestRandom extends MultiThreadTestCase {
-...
+    ...
 
     @Override
     public String execute() {
         return generateRandomIdLower36(6);
     }
     
-... 
+    ... 
 
 }
 ```
 
 2. initial MultiThreadTestHandler, set parameters you want, and call start().
 ```
-        MultiThreadTestHandler handler = new MultiThreadTestHandler();
-        handler.setTestingClass(TestRandom.class);
-        handler.setOutputPath("/data/temp/random/");
-        handler.start();
+    MultiThreadTestHandler handler = new MultiThreadTestHandler();
+    handler.setTestingClass(TestRandom.class);
+    handler.setOutputPath("/data/temp/random/");
+    handler.start();
 
 ```
 
