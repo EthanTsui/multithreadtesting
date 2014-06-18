@@ -72,8 +72,13 @@ public class TestRandom extends MultiThreadTestCase {
 }
 ```
 
-ref: https://github.com/EthanTsui/multithreadtesting/blob/master/MultiThreadTesting/src/com/ethan/testing/examples/TestRandom.java
+complete code: https://github.com/EthanTsui/multithreadtesting/blob/master/MultiThreadTesting/src/com/ethan/testing/examples/TestRandom.java
 
+##Example 2, get a new invoice id
+
+Note: To run this example, you will need a database and the JDBC driver.
+
+complete code: https://github.com/EthanTsui/multithreadtesting/blob/master/MultiThreadTesting/src/com/ethan/testing/examples/TestGetTransactionId.java
 
 ##Sample output
 
