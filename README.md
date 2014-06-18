@@ -8,7 +8,7 @@ This framework simulates multithreaded envirment for you and perform conccurent 
 
 2. initial MultiThreadTestHandler, set parameters you want, and call start().
 
-##Example 1:
+##Example 1
 
 ```
 public class TestRandom extends MultiThreadTestCase {
