@@ -23,14 +23,14 @@ public class MultiThreadTestHandler {
     /** numbers of concurrent threads */
     private int numbersOfThreads = 10;
     
-    /** output directory  */
+    /** temp output path  */
     private String outputPath = "/data/temp/";
     
     /** test class */
     private Class testingClass = null;
     
-    /** if true, output conflicted data  */
-    private boolean outputCollision = false;
+    /** if true, output duplicated data  */
+    private boolean outputDuplicatedData = false;
 
     public void start() {
         try {
@@ -104,7 +104,7 @@ public class MultiThreadTestHandler {
             }
 
             System.out.println("=== Result ===");
-            System.out.println("total outputs: \t\t"+datanum);
+            System.out.println("total numbers of output: \t\t"+datanum);
 
             int counter = 0;
             for (String key : maps.keySet()) {
@@ -116,8 +116,8 @@ public class MultiThreadTestHandler {
                 }
             }
 
-            System.out.println("# of confliction: \t" + counter);
-            System.out.println("confliction ratio: \t"+((counter/(float)datanum)*100f)+"%");
+            System.out.println("numbers of duplication: \t" + counter);
+            System.out.println("duplication ratio: \t"+((counter/(float)datanum)*100f)+"%");
 
         } catch (Exception err) {
             err.printStackTrace();
@@ -161,11 +161,11 @@ public class MultiThreadTestHandler {
     }
 
     public boolean isOutputCollision() {
-        return outputCollision;
+        return outputDuplicatedData;
     }
 
     public void setOutputCollision(boolean outputCollision) {
-        this.outputCollision = outputCollision;
+        this.outputDuplicatedData = outputCollision;
     }
 
 }
