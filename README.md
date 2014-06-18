@@ -4,7 +4,7 @@ This framework simulates multithreaded envirment for you and perform conccurent 
 
 Currently, this framework is ONLY suitable for testing unique string, for examples, unique id, transaction id, invoice id, and any single process which can be represented as a unique string.
 
-To avoid error "java.lang.OutOfMemoryError: Java heap space", Set vm parameter, -Xmx1024m, while running.
+To avoid error "java.lang.OutOfMemoryError: Java heap space", Set vm parameter, -Xmx1024m.
 
 ##How to use
 
