@@ -1,4 +1,4 @@
-Thread safety testing framework
+A simple framework for thread safety testing
 ==================
 This framework simulates multithreaded envirment for you and perform conccurent stress testing.
 
