@@ -2,7 +2,7 @@ Thread safety testing framework
 ==================
 This framework simulates multithreaded envirment for you and perform conccurent stress testing.
 
-Currently, this framework is ONLY suitable for testing concurrent generated unique strings, for examples, unique id, transaction id, invoice id, ...
+Currently, this framework is ONLY suitable for testing unique string, for examples, unique id, transaction id, invoice id, ...
 
 ##How to use
 
