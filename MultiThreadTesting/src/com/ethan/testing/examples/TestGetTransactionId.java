@@ -3,6 +3,7 @@
  */
 package com.ethan.testing.examples;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -34,6 +35,25 @@ public class TestGetTransactionId extends MultiThreadTestCase {
 
     }
 
+    @Override
+    public void init() {
+        try {
+            super.init();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+        // initial DAO object here...
+        
+    }
+    
+    @Override
+    public void close() {
+        super.close();
+        
+        // clean up resources
+    }
+    
     /**
      * 
      */
@@ -47,6 +67,7 @@ public class TestGetTransactionId extends MultiThreadTestCase {
     @Override
     public String execute() {
 
+        // getInvoiceId() could probably belong to a InvoiceDAO. Here is just a demonstration.
         return getInvoiceId();
     }
 
