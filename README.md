@@ -62,8 +62,8 @@ public class TestRandom extends MultiThreadTestCase {
     
     public String generateRandomIdLower36(int numberOfChar) {
         char[] output = new char[numberOfChar];
-        for (int i = 0; i < numberOfChar; i++) {
-            output[i] = CHARS36LOWER[random.nextInt(36)];
+        for (int i = 0, size=CHARS36LOWER.length; i < numberOfChar; i++) {
+            output[i] = CHARS36LOWER[random.nextInt(size)];
         }
         return new String(output);
     }
