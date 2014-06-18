@@ -4,6 +4,8 @@ This framework simulates multithreaded envirment for you and perform conccurent 
 
 Currently, this framework is ONLY suitable for testing unique string, for examples, unique id, transaction id, invoice id, and any single process which can be represented as a unique string.
 
+To avoid error "java.lang.OutOfMemoryError: Java heap space", Set vm parameter, -Xmx1024m, while running.
+
 ##How to use
 
 1. Extend MultiThreadTestCase and implement method execute() (the returned String is used to be a key, each process should have unique key. After the execution, if there are duplicated keys, the test is failed, in term of, it is not a thread safe function.)
