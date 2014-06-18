@@ -74,7 +74,6 @@ ref: https://github.com/EthanTsui/multithreadtesting/blob/master/MultiThreadTest
 ##Sample output
 
 ```
-Sample output: 
 execution finished...
 execution time(seconds): 	1.107
 single thread execution time (seconds): 	0.002
@@ -85,7 +84,7 @@ izo5rp: 2
 4e0egt: 2
 7mw78w: 2
 x51ubs: 2
-# of confliction: 	4
-confliction ratio: 	0.0026666666%
+numbers of duplication: 	4
+duplication ratio: 	0.0026666666%
 ```
 
