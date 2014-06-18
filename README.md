@@ -2,6 +2,8 @@ Thread safety testing framework
 ==================
 This framework simulates multithreaded envirment for you and perform conccurent stress testing.
 
+Currently, this framework is ONLY suitable for testing concurrent generated unique strings. For examples, unique id, transaction id, invoice id, ...
+
 ##How to use
 
 1. Extend MultiThreadTestCase and implement method execute() (the returned String is used to be a key, each process should have unique key. After the execution, if there are duplicated keys, the test is failed, in term of, it is not a thread safe function.)
