@@ -6,7 +6,29 @@ This framework simulates multithreaded envirment for you and perform conccurent 
 
 1. Extend MultiThreadTestCase and implement method execute() (the returned String is used to be a key, each process should have unique key. After the execution, if there are duplicated keys, the test is failed, in term of, it is not a thread safe function.)
 
+```
+public class TestRandom extends MultiThreadTestCase {
+...
+
+    @Override
+    public String execute() {
+        return generateRandomIdLower36(6);
+    }
+    
+... 
+
+}
+```
+
 2. initial MultiThreadTestHandler, set parameters you want, and call start().
+```
+        MultiThreadTestHandler handler = new MultiThreadTestHandler();
+        handler.setTestingClass(TestRandom.class);
+        handler.setOutputPath("/data/temp/random/");
+        handler.start();
+
+```
+
 
 ##Example 1
 
