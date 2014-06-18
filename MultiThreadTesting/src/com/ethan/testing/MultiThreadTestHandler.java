@@ -16,10 +16,20 @@ import java.util.concurrent.TimeUnit;
  * @author Ethan Tsui created date: 2014/6/17
  */
 public class MultiThreadTestHandler {
+    
+    /** single thread execution times */
     private int executionTimes = 100;
+    
+    /** numbers of concurrent threads */
     private int numbersOfThreads = 10;
+    
+    /** output directory  */
     private String outputPath = "/data/temp/";
+    
+    /** test class */
     private Class testingClass = null;
+    
+    /** if true, output conflicted data  */
     private boolean outputCollision = false;
 
     public void start() {
