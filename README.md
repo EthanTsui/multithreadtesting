@@ -15,9 +15,6 @@ To use this framework is quite easy.
 ```
 public class TestRandom extends MultiThreadTestCase {
 
-    /**
-     * @param args
-     */
     public static void main(String[] args) {
         MultiThreadTestHandler handler = new MultiThreadTestHandler();
         handler.setExecutionTimes(300);
@@ -29,16 +26,6 @@ public class TestRandom extends MultiThreadTestCase {
 
     }
 
-    /**
-     * 
-     */
-    public TestRandom() {
-        
-    }
-
-    /**
-     * @see com.ethan.testing.MultiThreadTestCase#execute()
-     */
     @Override
     public String execute() {
         return generateRandomIdLower36(6);
