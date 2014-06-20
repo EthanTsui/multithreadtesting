@@ -135,7 +135,8 @@ duplication ratio: 	0.2802%
 
 ```
 
-Add a static member, static Integer LOCK = new Integer(0);
+Add a static member, static Integer LOCK = new Integer(0); 
+And synchronized by LOCK object, try again,
 ```
 public class TestAccessStaticMember1 extends MultiThreadTestCase {
     static int value = 0;
@@ -163,7 +164,7 @@ public class TestAccessStaticMember1 extends MultiThreadTestCase {
 }
 ```
 
-The result is correct now.
+Finally, the result is correct.
 ```
 === Result ===
 total numbers of output: 		500000
