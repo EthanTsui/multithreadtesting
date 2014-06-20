@@ -5,7 +5,9 @@ This framework simulates multithreaded environment for you and perform conccuren
 Currently, this framework is ONLY suitable for testing unique string, for examples, unique id, transaction id, invoice id, and any single process which can be represented as a unique string.
 
 This framework has 2 steps.
+
 Step 1, Launch N threads and execute them concurrently. In each thread, the framework save the return of execute() into file. (each thread has its own file)
+
 Step 2, Load and count each line of each file to check if there are any duplication and generate the statistic result.
 
 This framework is simple but works well.
