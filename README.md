@@ -1,10 +1,16 @@
 A simple framework for thread safety testing
 ==================
-This framework simulates multithreaded envirment for you and perform conccurent stress testing.
+This framework simulates multithreaded environment for you and perform conccurent stress testing.
 
 Currently, this framework is ONLY suitable for testing unique string, for examples, unique id, transaction id, invoice id, and any single process which can be represented as a unique string.
 
-To avoid error "java.lang.OutOfMemoryError: Java heap space", Set vm parameter, -Xmx1024m.
+This framework has 2 steps.
+Step 1, Launch N threads and execute them concurrently. In each thread, the framework save the return of execute() into file. (each thread has its own file)
+Step 2, Load and count each line of each file to check if there are any duplication and generate the statistic result.
+
+This framework is simple but works well.
+
+Note: To avoid error "java.lang.OutOfMemoryError: Java heap space", Set vm parameter, -Xmx1024m.
 
 ##How to use
 
