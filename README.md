@@ -80,6 +80,97 @@ Note: To run this example, you will need a database and the JDBC driver.
 
 complete code: https://github.com/EthanTsui/multithreadtesting/blob/master/MultiThreadTesting/src/com/ethan/testing/examples/TestGetTransactionId.java
 
+
+##Example 3, concurrently access to the same static member
+```
+public class TestAccessStaticMember1 extends MultiThreadTestCase {
+    static int value = 0;
+    
+    @Override
+    public String execute() {
+            value += 1;
+            return Integer.toString(value);
+    }
+
+    public static void main(String[] args) {
+        MultiThreadTestHandler handler = new MultiThreadTestHandler();
+        handler.setExecutionTimes(500);
+        handler.setNumbersOfThreads(1000);
+        handler.setTestingClass(TestAccessStaticMember1.class);
+        handler.setOutputPath("/data/temp/test1/");
+        // handler.setOutputCollision(true);
+        handler.start();
+
+    }
+
+}
+```
+Concurrently run 1000 threads and each thread execute 500 times, 
+
+The result is not correct, there are a lot of duplications.
+```
+=== Result ===
+total numbers of output: 		500000
+numbers of duplication: 	2462
+duplication ratio: 	0.4924%
+```
+
+Add synchronized block to the execute() as below,
+
+```
+    public String execute() {
+        synchronized (this) {
+            value += 1;
+            return Integer.toString(value);
+        }
+    }
+```
+
+The result is also not correct, there are a lot of duplications.
+```
+=== Result ===
+total numbers of output: 		500000
+numbers of duplication: 	1401
+duplication ratio: 	0.2802%
+
+```
+
+Add a static member, static Integer LOCK = new Integer(0);
+```
+public class TestAccessStaticMember1 extends MultiThreadTestCase {
+    static int value = 0;
+    static Integer LOCK = new Integer(0);
+
+    @Override
+    public String execute() {
+        synchronized (LOCK) {
+            value += 1;
+            return Integer.toString(value);
+        }
+    }
+
+    public static void main(String[] args) {
+        MultiThreadTestHandler handler = new MultiThreadTestHandler();
+        handler.setExecutionTimes(500);
+        handler.setNumbersOfThreads(1000);
+        handler.setTestingClass(TestAccessStaticMember1.class);
+        handler.setOutputPath("/data/temp/test1/");
+        // handler.setOutputCollision(true);
+        handler.start();
+
+    }
+
+}
+```
+
+The result is correct now.
+```
+=== Result ===
+total numbers of output: 		500000
+numbers of duplication: 	0
+duplication ratio: 	0.0%
+```
+
 ##Sample output
 
 ```
